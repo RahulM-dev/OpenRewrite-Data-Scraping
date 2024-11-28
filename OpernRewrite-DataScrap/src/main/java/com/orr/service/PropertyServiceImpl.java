@@ -99,12 +99,10 @@ public class PropertyServiceImpl implements PropertyService {
 		try (Workbook workbook = new XSSFWorkbook()) {
 			Sheet sheet = workbook.createSheet("Data");
 
-			// Header Row
 			Row header = sheet.createRow(0);
 			header.createCell(0).setCellValue(col1Header);
 			header.createCell(1).setCellValue(col2Header);
 
-			// Data Rows
 			int rowIdx = 1;
 			for (T item : data) {
 				Row row = sheet.createRow(rowIdx++);
@@ -119,11 +117,9 @@ public class PropertyServiceImpl implements PropertyService {
 				}
 			}
 
-			// Auto-size columns
 			sheet.autoSizeColumn(0);
 			sheet.autoSizeColumn(1);
 
-			// Write to ByteArrayOutputStream
 			ByteArrayOutputStream out = new ByteArrayOutputStream();
 			workbook.write(out);
 			return out;
