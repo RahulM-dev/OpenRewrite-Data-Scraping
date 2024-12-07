@@ -53,4 +53,9 @@ public class OpenRewriteController {
 			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
+	
+	@GetMapping("/test")
+	public String testString() {
+		return "This is test string";
+	}
 }
