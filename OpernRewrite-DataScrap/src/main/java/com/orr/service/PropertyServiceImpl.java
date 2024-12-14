@@ -44,7 +44,6 @@ public class PropertyServiceImpl implements PropertyService {
 					allProperties.add(sbDPWN);
 				}
 			}
-			System.out.println(allProperties.size());
 		} catch (Exception e) {
 			e.printStackTrace();
 			return new ArrayList<>();
